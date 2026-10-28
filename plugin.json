@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kmw03-development-testing-workflow",
+  "version": "0.1.0",
+  "description": "以需求、可重現測試與節制預算協助開發、除錯及人工驗收。",
+  "repository": "https://github.com/dinohappy12/kmw03-development-testing-workflow",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "黃嘉偉KMW03開發測試助手",
+        "shortDescription": "需求開發、節制測試與人工驗收",
+        "longDescription": "以 ChatGPT 為入口，先建議適合的模式與思考強度，再依可用工具整理需求、規劃小步、定位問題、有限測試及交付人工驗收。實際讀寫與執行取決於帳號和工具能力。",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": "請協助我開發與測試，先建議適合的模式，再確認工具、規格與測試方式。",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png",
+        "brandColor": "#B49A62"
+      }
+    }
+  }
+}

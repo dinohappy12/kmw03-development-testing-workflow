@@ -13,6 +13,15 @@
 
 每個完成條件先選能觀察結果的最高合適入口。例如文章可複製，要看實際三篇輸出是否三塊，不只看SKILL.md寫了可複製。LINE主文與接龍要查同區塊，不能分別找到四個字就通過。工具規則新增後要有故意錯的樣本，證明檢查會拒絕已知失敗。
 
+## 測試執行器與續接
+執行：`python scripts/run_bounded.py plan.json --state state.json --report report.json`。三檔必須不同位置；state與report是專案工作紀錄，不放進公共包。
+
+每個commands項目含穩定id、argv字串陣列及可選timeout。預設最多30秒；若需90秒，填`"timeout":90,"timeout_reason":"此整合案例含已知等待，允許最多90秒"`。空理由仍封頂30秒，所有情形受剩餘總預算限制；180秒是預設總執行額度，不是每步時間或整段聊天時間。超時與工具啟動失敗皆屬未完成，不能當作品內容已判錯。
+
+需要修正計畫時，保留同一state/report，執行時加`--revision-reason "修正命令參數，驗收條件不變"`。會保存前後plan hash、理由與已耗額度；不增加原budget、不改案例id、不清失敗數。原版state須先用原計畫讀取遷移才能修訂；已有兩敗或用盡輪數／時間仍停止。真正新增範圍另外記決策，不用新檔名逃避原停止條件。
+
+工具啟動失敗會留下launch_error及當輪紀錄，timeout會留下command_timeout；進行中意外中斷則下次回報interrupted_run，先確認程序是否仍在運行、實際用時與結果，再人工核對紀錄續接，禁止直接刪state重跑。這些紀錄須由AI解讀，使用者只需讀白話結果。
+
 ## 複製結構檢查器
 CLI：python scripts/check_copy_blocks.py --artifact OUTPUT.md --contract CONTRACT.json
 

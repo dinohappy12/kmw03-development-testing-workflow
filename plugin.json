@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kmw03-development-testing-workflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "以需求、可重現測試與節制預算協助開發、除錯及人工驗收。",
   "repository": "https://github.com/dinohappy12/kmw03-development-testing-workflow",
   "extensions": {

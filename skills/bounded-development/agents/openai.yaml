@@ -1,4 +1,6 @@
 interface:
+  icon_small: "./assets/logo.png"
+  icon_large: "./assets/logo.png"
   display_name: "研發｜需求驅動開發與節制驗證"
   short_description: "把需求轉成可審閱版本，限制測試次數、記錄卡點與人工驗收"
   default_prompt: "請使用 $bounded-development，先建議適合此任務的 ChatGPT 模式與思考強度，確認可用工具，再依需求開發、按預算測試並交付人工驗收。"

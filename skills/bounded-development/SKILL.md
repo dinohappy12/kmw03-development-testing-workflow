@@ -2,7 +2,7 @@
 name: bounded-development
 description: "將已確認的系統、工作流程或Skill需求整理成規格，完成開發、節制驗證、需求與規則審閱，交白話驗收單供本人確認；日常內容產製不套本技能。"
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # 需求驅動開發與節制驗證
